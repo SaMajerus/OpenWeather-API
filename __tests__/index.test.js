@@ -1,4 +1,4 @@
-import getWeather from '../src/getWeather.js';
+import './../src/index.js';
 
 describe('', () => {
 

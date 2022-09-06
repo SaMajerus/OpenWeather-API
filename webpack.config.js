@@ -11,14 +11,18 @@ module.exports = {
     path: path.resolve(__dirname, 'dist')
   },
   devServer: {
-    contentBase: './dist'
+    static: {
+      directory: path.join(__dirname, "public"),
+    },
+    compress: true,
+    port: 9000,
   },
   devtool: 'eval-source-map',
   plugins: [
     new ESLintPlugin(),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Shape Tracker', 
+      title: 'Openweather API', 
       template: './src/index.html',
       inject: 'body'
     }),
