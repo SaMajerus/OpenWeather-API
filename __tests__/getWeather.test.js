@@ -1,4 +1,4 @@
-//import  from './../src/.js';
+import getWeather from '../src/getWeather.js';
 
 describe('', () => {
 
