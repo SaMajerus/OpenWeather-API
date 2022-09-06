@@ -29,7 +29,12 @@ function printError(request, apiResponse, city) {
 
 function printElements(apiResponse, city) { 
   document.querySelector('#showResponse').innerText = `The humidity in ${city} is ${apiResponse.main.humidity}%.
-  The temperature in Kelvins is ${apiResponse.main.temp} degrees.`;
+  The temperature in Fahrenheit is ${(1.8 * (apiResponse.main.temp-273))+32} degrees.
+  The temperature in Kelvin is ${apiResponse.main.temp} degrees.
+  The timezone is ${apiResponse.timezone}.
+  The tempurature feels like ${apiResponse.main.feels_like} degrees Kelvin.
+  Sunrise will occur at ${apiResponse.sys.sunrise} UTC.
+  Sunset will occur at ${apiResponse.sys.sunset} UTC.`; 
 }
 
 function handleFormSubmission(event) {
